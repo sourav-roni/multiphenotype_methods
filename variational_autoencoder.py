@@ -9,6 +9,11 @@ from scipy.special import expit
 from general_autoencoder import GeneralAutoencoder
 from standard_autoencoder import StandardAutoencoder
 
+
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
 class VariationalAutoencoder(StandardAutoencoder):
     """
     Implements a standard variational autoencoder (diagonal Gaussians everywhere).

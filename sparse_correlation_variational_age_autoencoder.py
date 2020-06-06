@@ -11,6 +11,9 @@ from variational_autoencoder import VariationalAutoencoder
 from variational_age_autoencoder import VariationalAgeAutoencoder
 
 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
 class SparseCorrelationVariationalAgeAutoencoder(VariationalAgeAutoencoder):
     """
     Implements a variational autoencoder with an age prior and sparsity on the X-Z correlation matrix.

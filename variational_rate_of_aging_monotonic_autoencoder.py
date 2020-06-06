@@ -11,6 +11,9 @@ from standard_autoencoder import StandardAutoencoder
 from variational_autoencoder import VariationalAutoencoder
 from variational_rate_of_aging_autoencoder import VariationalRateOfAgingAutoencoder
 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
 class VariationalRateOfAgingMonotonicAutoencoder(VariationalRateOfAgingAutoencoder):
     """
     We have X = residual + monotone_elementwise_nonlinearity(A*Z_age) where A is a non-negative matrix. 

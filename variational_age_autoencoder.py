@@ -9,6 +9,12 @@ from general_autoencoder import GeneralAutoencoder
 from standard_autoencoder import StandardAutoencoder
 from variational_autoencoder import VariationalAutoencoder
 
+
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
+
 class VariationalAgeAutoencoder(VariationalAutoencoder):
     """
     Implements a variational autoencoder with an age prior.

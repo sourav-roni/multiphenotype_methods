@@ -7,6 +7,12 @@ from dimreducer import DimReducer
 from copy import deepcopy
 
 from general_autoencoder import GeneralAutoencoder
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
 
 class StandardAutoencoder(GeneralAutoencoder):
     """

@@ -10,6 +10,10 @@ from general_autoencoder import GeneralAutoencoder
 from standard_autoencoder import StandardAutoencoder
 from variational_autoencoder import VariationalAutoencoder
 
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
 class VariationalRateOfAgingAutoencoder(VariationalAutoencoder):
     """
     Implements a variational rate-of-aging autoencoder.

@@ -14,6 +14,9 @@ import time, random, os
 from scipy.special import expit
 
 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
 """
 This file contains classes to compute multi-phenotypes. 
 """

@@ -6,6 +6,9 @@ from scipy.stats import spearmanr, pearsonr
 from scipy.cluster.hierarchy import linkage, dendrogram, fcluster
 from scipy.spatial.distance import squareform
 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
 def move_last_col_to_first(df):
     cols = df.columns.tolist()
     cols = cols[-1:] + cols[:-1]

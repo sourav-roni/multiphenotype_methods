@@ -1,5 +1,8 @@
 from distutils.core import setup
 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
 setup(name='dimreducer',
       version='1.0',
       description='Dimension reduction methods',

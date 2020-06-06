@@ -10,6 +10,10 @@ from scipy.special import expit
 import copy
 import random
 
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
 class GeneralAutoencoder(DimReducer):
     """
     Base autoencoder class that other classes derive from. 
@@ -88,6 +92,7 @@ class GeneralAutoencoder(DimReducer):
             
         self.learning_rate = learning_rate
         self.optimization_method = tf.train.AdamOptimizer
+#         self.optimization_method = tf.optimizers.Adam()
         self.initialization_function = self.glorot_init
         self.initialization_scaling = initialization_scaling # how much should we scale the initialization by to keep from exploding. 
         self.all_losses_by_epoch = []
@@ -345,6 +350,7 @@ class GeneralAutoencoder(DimReducer):
         self.graph = tf.Graph()
         with self.graph.as_default():
             tf.set_random_seed(self.random_seed)
+#             tf.random.set_seed(self.random_seed) 
             np.random.seed(self.random_seed)
 
             self.X = tf.placeholder(dtype="float32", 
